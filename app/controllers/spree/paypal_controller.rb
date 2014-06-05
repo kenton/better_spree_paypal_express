@@ -110,7 +110,7 @@ module Spree
       tax_adjustments = tax_adjustments.additional if tax_adjustments.respond_to?(:additional)
       tax_adjustments_total = tax_adjustments.sum(:amount)
 
-      transaction_type = payment_method.auto_capture? ? 'Sale' : 'Authorization'
+      transaction_type = payment_method.auto_capture? ? 'Sale' : 'Order'
 
       if item_sum.zero?
         # Paypal does not support no items or a zero dollar ItemTotal
