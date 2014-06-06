@@ -40,7 +40,7 @@ module Spree
     end
 
     def authorize(amount, express_checkout, gateway_options={})
-      create_transaction(amount, express_checkout, "Authorization")
+      create_transaction(amount, express_checkout, "Order")
     end
 
     def capture(payment, source, gateway_options)
